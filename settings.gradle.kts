@@ -22,3 +22,4 @@ dependencyResolutionManagement {
 rootProject.name = "FetchHumzaAhmadTakeHome"
 include(":app")
 include(":data")
+include(":feature-items")
