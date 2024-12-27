@@ -22,12 +22,13 @@ class ItemsViewModel @Inject constructor(private val repo: FetchRepository): Vie
             emit(Error("No data found"))
         }
         else {
+            // Group items by listId and then sort items by id
             val groups = items.groupBy { it.listId }.map {
                 ItemUIGroupModel(groupId = it.key, items = it.value.map { item ->
                     ItemUIModel(id = item.id, name = item.name)
                 }.sortedBy { it.id })
             }
-            emit(Success(groups = groups.sortedBy { it.groupId }) as ItemsScreenState)
+            emit(Success(groups = groups.sortedBy { it.groupId }))
         }
     }.catch {
         emit(Error(it.message ?: "Something went wrong"))

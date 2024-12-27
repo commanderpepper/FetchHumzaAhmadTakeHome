@@ -16,6 +16,7 @@ fun GroupUI(modifier : Modifier = Modifier.fillMaxWidth(), group: ItemUIGroupMod
     Column(modifier = modifier.padding(8.dp)) {
         Text(modifier = Modifier.padding(8.dp), text = "Group ${group.groupId}", fontSize = 16.sp)
         group.items.forEach { item ->
+            // Only display an item is name is not null and not empty
             if(!item.name.isNullOrEmpty()){
                 GroupItemUI(item = item)
             }
