@@ -40,10 +40,10 @@ fun ItemsScreen(modifier: Modifier, viewModel: ItemsViewModel = hiltViewModel())
 fun ItemsScreen(modifier: Modifier, groups: List<ItemUIGroupModel>){
     Column(modifier = modifier.fillMaxSize().verticalScroll(state = rememberScrollState())) {
         groups.forEach { group ->
-            Text("${group.groupId}")
+            Text("Group: ${group.groupId}")
             group.items.forEach { item ->
                 Row {
-                    Text(item.name)
+                    Text("\t${item.name}")
                 }
             }
         }
