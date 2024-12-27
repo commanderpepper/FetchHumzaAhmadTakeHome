@@ -1,0 +1,6 @@
+package humzaahmad.fetchhumzaahmadtakehome
+
+import kotlinx.serialization.Serializable
+
+@Serializable
+data object ItemsDestination
