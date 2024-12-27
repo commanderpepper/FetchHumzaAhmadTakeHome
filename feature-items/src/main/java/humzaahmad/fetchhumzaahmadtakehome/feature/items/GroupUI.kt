@@ -25,7 +25,7 @@ fun GroupUI(modifier : Modifier = Modifier.fillMaxWidth(), group: ItemUIGroupMod
 }
 
 @Composable
-fun GroupItemUI(modifier : Modifier = Modifier.fillMaxSize(), item: ItemUIModel) {
+fun GroupItemUI(modifier : Modifier = Modifier.fillMaxWidth(), item: ItemUIModel) {
     Row(modifier = modifier.padding(4.dp)) {
         Text("\t${item.name}", fontSize = 14.sp)
     }
