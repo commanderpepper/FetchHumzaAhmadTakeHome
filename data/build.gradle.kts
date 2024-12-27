@@ -1,18 +1,35 @@
 plugins {
-    id("java-library")
-    alias(libs.plugins.jetbrains.kotlin.jvm)
+    alias(libs.plugins.android.library)
     alias(libs.plugins.kotlinAndroidKsp)
     alias(libs.plugins.kotlin.serialization)
+    alias(libs.plugins.kotlin.android)
 }
 
-java {
-    sourceCompatibility = JavaVersion.VERSION_11
-    targetCompatibility = JavaVersion.VERSION_11
-}
+android {
+    namespace = "humzaahmad.fetchhumzaahmadtakehome.data"
+    compileSdk = 35
 
-kotlin {
-    compilerOptions {
-        jvmTarget = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_11
+    defaultConfig {
+        minSdk = 21
+
+        testInstrumentationRunner = "android.template.core.testing.HiltTestRunner"
+        consumerProguardFiles("consumer-rules.pro")
+    }
+
+    buildFeatures {
+        aidl = false
+        buildConfig = false
+        renderScript = false
+        shaders = false
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
+    }
+
+    kotlinOptions {
+        jvmTarget = "11"
     }
 }
 
@@ -22,6 +39,7 @@ dependencies {
     implementation(libs.retrofit.kotinx.serialization)
     implementation(libs.okhttp.interceptor)
 
-    implementation(libs.dagger)
-    ksp(libs.dagger.compiler)
+    implementation(libs.hilt.android)
+    implementation(libs.androidx.core.ktx)
+    ksp(libs.hilt.compiler)
 }

@@ -8,7 +8,7 @@ plugins {
 
 android {
     namespace = "humzaahmad.fetchhumzaahmadtakehome.feature.items"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         minSdk = 26
