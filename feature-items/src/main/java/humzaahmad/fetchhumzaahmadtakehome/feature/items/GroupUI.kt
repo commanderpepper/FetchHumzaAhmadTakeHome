@@ -15,7 +15,7 @@ import androidx.compose.ui.unit.sp
 @Composable
 fun GroupUI(modifier : Modifier = Modifier.fillMaxWidth(), group: ItemUIGroupModel){
     Column(modifier = modifier.padding(8.dp)) {
-        Text(modifier = Modifier.padding(8.dp), text = "${group.groupId}", fontSize = 16.sp)
+        Text(modifier = Modifier.padding(8.dp), text = "Group ${group.groupId}", fontSize = 16.sp)
         group.items.forEach { item ->
             if(!item.name.isNullOrEmpty()){
                 GroupItemUI(item = item)
